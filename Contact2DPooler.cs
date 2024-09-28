@@ -11,14 +11,14 @@ namespace ECS.Modules.Exerussus.Contact2D
         public void Initialize(EcsWorld world)
         {
             ContactDetector = new PoolerModule<Contact2DData.ContactDetector>(world);
-            CollisionHandler = new PoolerModule<Contact2DData.CollisionHandler>(world);
-            HandlerFilter = world.Filter<Contact2DData.CollisionHandler>().End();
+            ReadOnlyCollisionHandler = new PoolerModule<ReadOnlyContact2DData.CollisionHandler>(world);
+            HandlerFilter = world.Filter<ReadOnlyContact2DData.CollisionHandler>().End();
         }
 
         public bool IsDebug;
         public List<CollisionProcess> ProcessesDebug;
         public EcsFilter HandlerFilter;
         public PoolerModule<Contact2DData.ContactDetector> ContactDetector;
-        public PoolerModule<Contact2DData.CollisionHandler> CollisionHandler;
+        public PoolerModule<ReadOnlyContact2DData.CollisionHandler> ReadOnlyCollisionHandler;
     }
 }

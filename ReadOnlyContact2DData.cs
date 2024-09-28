@@ -12,7 +12,9 @@ namespace ECS.Modules.Exerussus.Contact2D
         {
             public MonoBehaviours.Contact2DDetector Value;
         }
-
+    }
+    public static class ReadOnlyContact2DData
+    {
         public struct CollisionHandler : IEcsComponent
         {
             public Dictionary<Collider2D, MonoBehaviours.Contact2DDetector> Detectors;

@@ -13,10 +13,10 @@ namespace ECS.Modules.Exerussus.Contact2D.Systems
         
         protected override void Initialize()
         {
-            _handlerFilter = World.Filter<Contact2DData.CollisionHandler>().End();
+            _handlerFilter = World.Filter<ReadOnlyContact2DData.CollisionHandler>().End();
             
             var entity = World.NewEntity();
-            ref var handlerData = ref Pooler.CollisionHandler.Add(entity);
+            ref var handlerData = ref Pooler.ReadOnlyCollisionHandler.Add(entity);
             handlerData.Detectors = new Dictionary<Collider2D, Contact2DDetector>(64);
             handlerData.DetectorIdCounter = new IndexCounter();
             handlerData.CollisionIdCounter = new IndexCounter();
@@ -28,7 +28,7 @@ namespace ECS.Modules.Exerussus.Contact2D.Systems
         {
             foreach (var handlerEntity in _handlerFilter)
             {
-                ref var handlerData = ref Pooler.CollisionHandler.Get(handlerEntity);
+                ref var handlerData = ref Pooler.ReadOnlyCollisionHandler.Get(handlerEntity);
 
                 if (Pooler.IsDebug) Pooler.ProcessesDebug.Clear();
                 handlerData.ExistingProcessesHash.Clear();

@@ -11,7 +11,7 @@ namespace ECS.Modules.Exerussus.Contact2D
         {
             if (pooler.HandlerFilter.TryGetFirstEntity(out var handlerEntity))
             {
-                ref var handlerData = ref pooler.CollisionHandler.Get(handlerEntity);
+                ref var handlerData = ref pooler.ReadOnlyCollisionHandler.Get(handlerEntity);
 
                 var hashCode = GenerateHash(first.ID, second.ID);
                     
@@ -33,7 +33,7 @@ namespace ECS.Modules.Exerussus.Contact2D
         {
             if (pooler.HandlerFilter.TryGetFirstEntity(out var handlerEntity))
             {
-                ref var handlerData = ref pooler.CollisionHandler.Get(handlerEntity);
+                ref var handlerData = ref pooler.ReadOnlyCollisionHandler.Get(handlerEntity);
 
                 var hashCode = GenerateHash(first.ID, second.GetHashCode());
                 

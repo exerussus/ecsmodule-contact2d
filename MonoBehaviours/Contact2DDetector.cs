@@ -33,7 +33,7 @@ namespace ECS.Modules.Exerussus.Contact2D.MonoBehaviours
 
             if (_pooler.HandlerFilter.TryGetFirstEntity(out var handlerEntity))
             {
-                ref var handlerData = ref _pooler.CollisionHandler.Get(handlerEntity);
+                ref var handlerData = ref _pooler.ReadOnlyCollisionHandler.Get(handlerEntity);
                 Detectors = handlerData.Detectors;
                 Detectors[objectCollider2D] = this;
                 ID = handlerData.DetectorIdCounter.FreeId;
