@@ -10,9 +10,12 @@ namespace ECS.Modules.Exerussus.Contact2D
         /// </summary>
         public struct OnContactEntity
         {
+            /// <summary> Уникальный идентификатор столкновения </summary>
             public int CollisionId;
+            /// <summary> Первая запакованная сущность </summary>
             public EcsPackedEntity First;
             public Collider2D FirstCollider;
+            /// <summary> Вторая запакованная сущность </summary>
             public EcsPackedEntity Second;
             public Collider2D SecondCollider;
         }
@@ -22,7 +25,9 @@ namespace ECS.Modules.Exerussus.Contact2D
         /// </summary>
         public struct OnContactCollider
         {
+            /// <summary> Уникальный идентификатор столкновения </summary>
             public int CollisionId;
+            /// <summary> Первая запакованная сущность </summary>
             public EcsPackedEntity First;
             public Collider2D FirstCollider;
             public Collider2D SecondCollider;
