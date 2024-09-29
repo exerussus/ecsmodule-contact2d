@@ -20,13 +20,13 @@ namespace ECS.Modules.Exerussus.Contact2D
             public Dictionary<Collider2D, MonoBehaviours.Contact2DDetector> Detectors;
             public IndexCounter CollisionIdCounter;
             public IndexCounter DetectorIdCounter;
-            public Queue<CollisionProcess> Processes;
+            public Queue<Collision2DProcess> Processes;
             public HashSet<int> ExistingProcessesHash;
         }
     }
     
     [Serializable]
-    public struct CollisionProcess
+    public struct Collision2DProcess
     {
         public int HashCode;
         

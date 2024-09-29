@@ -9,7 +9,7 @@ namespace ECS.Modules.Exerussus.Contact2D.Systems
     public class Contact2DSystem : EasySystem<Contact2DPooler>
     {
         private EcsFilter _handlerFilter;
-        private List<CollisionProcess> _processes;
+        private List<Collision2DProcess> _processes;
         
         protected override void Initialize()
         {
@@ -20,7 +20,7 @@ namespace ECS.Modules.Exerussus.Contact2D.Systems
             handlerData.Detectors = new Dictionary<Collider2D, Contact2DDetector>(64);
             handlerData.DetectorIdCounter = new IndexCounter();
             handlerData.CollisionIdCounter = new IndexCounter();
-            handlerData.Processes = new Queue<CollisionProcess>(64);
+            handlerData.Processes = new Queue<Collision2DProcess>(64);
             handlerData.ExistingProcessesHash = new HashSet<int>(64);
         }
 

@@ -16,7 +16,7 @@ namespace ECS.Modules.Exerussus.Contact2D
         }
 
         public bool IsDebug;
-        public List<CollisionProcess> ProcessesDebug;
+        public List<Collision2DProcess> ProcessesDebug;
         public EcsFilter HandlerFilter;
         public PoolerModule<Contact2DData.ContactDetector> ContactDetector;
         public PoolerModule<ReadOnlyContact2DData.CollisionHandler> ReadOnlyCollisionHandler;

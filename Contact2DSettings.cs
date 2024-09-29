@@ -7,6 +7,6 @@ namespace ECS.Modules.Exerussus.Contact2D
     {
         public UpdateType Update = UpdateType.FixedUpdate;
         public bool IsDebug = false;
-        public List<CollisionProcess> ProcessesDebug;
+        public List<Collision2DProcess> ProcessesDebug;
     }
 }

@@ -17,7 +17,7 @@ namespace ECS.Modules.Exerussus.Contact2D
                     
                 if (handlerData.ExistingProcessesHash.Contains(hashCode)) return;
 
-                var process = new CollisionProcess
+                var process = new Collision2DProcess
                 {
                     HashCode = hashCode,
                     First = new EntityInfo { Collider2D = first.Collider2D, Entity = first.EcsPackedEntity, HasEntity = true },
@@ -39,7 +39,7 @@ namespace ECS.Modules.Exerussus.Contact2D
                 
                 if (handlerData.ExistingProcessesHash.Contains(hashCode)) return;
 
-                var process = new CollisionProcess
+                var process = new Collision2DProcess
                 {
                     HashCode = hashCode,
                     First = new EntityInfo { Collider2D = first.Collider2D, Entity = first.EcsPackedEntity, HasEntity = true },
