@@ -9,15 +9,10 @@ namespace ECS.Modules.Exerussus.Contact2D
     public class Contact2DGroup : EcsGroup<Contact2DPooler>
     {
         public Contact2DSettings Settings = new Contact2DSettings();
-        
-        public override void InitializeGroup()
+
+        public override void PreInitComponents(string starterName, GroupContext groupContext, GameContext gameContext, GameShare gameShare, EcsWorld world)
         {
-            base.InitializeGroup();
-            if (Settings.IsDebug)
-            {
-                Pooler.IsDebug = true;
-                Pooler.ProcessesDebug = Settings.ProcessesDebug;
-            }
+            if (Settings.IsDebug) Pooler.IsDebug = true;
         }
 
         protected override void SetFixedUpdateSystems(IEcsSystems fixedUpdateSystems)
@@ -41,6 +36,18 @@ namespace ECS.Modules.Exerussus.Contact2D
         protected override void SetTickUpdateSystems(IEcsSystems tickUpdateSystems)
         {
             if (Settings.Update == UpdateType.TickUpdate) tickUpdateSystems.Add(new Contact2DSystem());
+        }
+        
+        public Contact2DGroup SetUpdateType(UpdateType updateType)
+        {
+            Settings.Update = updateType;
+            return this;
+        }
+        
+        public Contact2DGroup SetDebugMode(bool isEnabled)
+        {
+            Settings.IsDebug = isEnabled;
+            return this;
         }
     }
 }
