@@ -10,7 +10,7 @@ namespace ECS.Modules.Exerussus.Contact2D
     {
         public Contact2DSettings Settings = new Contact2DSettings();
 
-        public override void PreInitComponents(string starterName, GroupContext groupContext, GameContext gameContext, GameShare gameShare, EcsWorld world)
+        protected override void OnBeforePoolInitializing(EcsWorld world, Contact2DPooler pooler)
         {
             if (Settings.IsDebug) Pooler.IsDebug = true;
         }
