@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿
 using Exerussus._1EasyEcs.Scripts.Core;
 
 namespace ECS.Modules.Exerussus.Contact2D
