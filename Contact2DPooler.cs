@@ -8,7 +8,7 @@ namespace ECS.Modules.Exerussus.Contact2D
 {
     public class Contact2DPooler : IGroupPooler
     {
-        public void Initialize(EcsWorld world)
+        public virtual void Initialize(EcsWorld world)
         {
             ContactDetector = new PoolerModule<Contact2DData.ContactDetector>(world);
             ReadOnlyCollisionHandler = new PoolerModule<ReadOnlyContact2DData.CollisionHandler>(world);

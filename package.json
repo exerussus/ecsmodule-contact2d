@@ -1,6 +1,6 @@
 {
   "name": "com.exerussus.ecsmodule.contact2d",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "displayName": "Contact2D",
   "description": "Модуль для 1EasyEcs",
   "unity": "2020.3",
