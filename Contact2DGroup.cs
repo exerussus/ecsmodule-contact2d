@@ -32,11 +32,6 @@ namespace ECS.Modules.Exerussus.Contact2D
         {
             if (Settings.Update == UpdateType.LateUpdate) lateUpdateSystems.Add(new Contact2DSystem());
         }
-
-        protected override void SetTickUpdateSystems(IEcsSystems tickUpdateSystems)
-        {
-            if (Settings.Update == UpdateType.TickUpdate) tickUpdateSystems.Add(new Contact2DSystem());
-        }
         
         public Contact2DGroup SetUpdateType(UpdateType updateType)
         {
